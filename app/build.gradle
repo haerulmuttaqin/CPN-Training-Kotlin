@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation project(":entity")
+    implementation project(":data")
+    implementation project(":domain")
+    implementation rootProject.ext.main.kotlin
+    implementation rootProject.ext.main.coreKtx
+    implementation rootProject.ext.main.appCompat
+    implementation rootProject.ext.main.googleMaterial
+    implementation rootProject.ext.main.constraintLayout
+    implementation rootProject.ext.main.activityKtx
+    implementation rootProject.ext.main.legacy
+    implementation rootProject.ext.main.recyclerView
+
+    implementation rootProject.ext.architectureComponents.fragmentKtx
+    implementation rootProject.ext.architectureComponents.navigationFragment
+    implementation rootProject.ext.architectureComponents.livedataKtx
+    implementation rootProject.ext.architectureComponents.viewmodelKtx
+    implementation rootProject.ext.architectureComponents.navigationUi
+    implementation rootProject.ext.architectureComponents.navigationFragment
+    implementation rootProject.ext.architectureComponents.paging
+    implementation rootProject.ext.architectureComponents.workManager
+    implementation rootProject.ext.architectureComponents.roomKtx
+    annotationProcessor  rootProject.ext.architectureComponents.roomCompiler
+    kapt rootProject.ext.architectureComponents.roomCompiler
+
+    implementation rootProject.ext.misc.coroutinesCore
+    implementation rootProject.ext.misc.coroutinesAndroid
+    implementation rootProject.ext.misc.okhttp
+    implementation rootProject.ext.misc.loggingInterceptor
+    implementation rootProject.ext.misc.retrofit
+    implementation rootProject.ext.misc.converterMoshi
+    implementation rootProject.ext.misc.moshi
+    implementation rootProject.ext.misc.moshiKotlin
+    implementation rootProject.ext.misc.koinCore
+    implementation rootProject.ext.misc.koinAndroid
+    implementation rootProject.ext.misc.koinAndroidScope
+    implementation rootProject.ext.misc.koinViewModel
+    implementation rootProject.ext.misc.koinFragment
+    implementation rootProject.ext.misc.coil
+    implementation rootProject.ext.misc.circularImageView
+    implementation rootProject.ext.misc.prettyTime
+
+    testImplementation rootProject.ext.testing.junit
+    androidTestImplementation rootProject.ext.testing.extJunit
+    androidTestImplementation rootProject.ext.testing.espressoCore
+}

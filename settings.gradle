@@ -1,0 +1,5 @@
+rootProject.name = "CPN-Training-Kotlin-FProj"
+include ':app'
+include ':entity'
+include ':domain'
+include ':data'

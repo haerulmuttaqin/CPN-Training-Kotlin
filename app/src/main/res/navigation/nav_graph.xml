@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainNewsFragment">
+
+    <fragment
+        android:id="@+id/mainNewsFragment"
+        android:name="id.haerulmuttaqin.cpn_training_kotlin.present.MainFragment"
+        android:label="SocialUs"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainNewsFragment_to_postFragment"
+            app:destination="@id/postFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="id.haerulmuttaqin.cpn_training_kotlin.present.PostFragment"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_post" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+</navigation>

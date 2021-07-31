@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Our Pets Apps</string>
+    <string name="button_retry">Retry</string>
+    <string name="label_error">Something went wrong, please try again</string>
+    <string name="image">Image</string>
+    <string name="post_comments">Post Comments</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_comment_available">No comment available</string>
+</resources>
